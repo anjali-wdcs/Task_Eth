@@ -97,7 +97,7 @@ contract LYCToken is ERC20Interface, SafeMath {
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
-        uint256 toBurn = _value / 100;
+        uint256 toBurn = (_value *5) / 100;
         
         if (LYCToken.transfer (_to, _value - toBurn)) {
             require (burn (toBurn));
